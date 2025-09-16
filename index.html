@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sebastian Pasker - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
+</head>
+<body>
+  <nav class="nav-index">
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <button id="theme-toggle" aria-label="Toggle theme">☀</button>
+
+  <section id="home" class="panel">
+    <div class="container">
+      <img src="https://via.placeholder.com/150" alt="Avatar" class="avatar"/>
+      <h1 id="intro" class="title"></h1>
+      <button id="view-projects">Mis proyectos</button>
+    </div>
+  </section>
+
+  <section id="projects" class="panel">
+    <div class="container">
+      <h2>My Projects</h2>
+      <div class="carousel-wrapper" tabindex="0">
+        <button class="arrow left" data-carousel="projects" aria-label="Previous slide">&#9664;</button>
+        <div class="carousel-view">
+          <div class="carousel" id="projects-carousel">
+            <div class="item">
+              <div class="caption">
+                <h3>Project One</h3>
+                <p>Short description of the project.</p>
+                <a href="#">View project</a>
+              </div>
+              <img src="https://via.placeholder.com/600x400" alt="Project One"/>
+            </div>
+            <div class="item">
+              <div class="caption">
+                <h3>Project Two</h3>
+                <p>Short description of the project.</p>
+                <a href="#">View project</a>
+              </div>
+              <img src="https://via.placeholder.com/600x400" alt="Project Two"/>
+            </div>
+            <div class="item">
+              <div class="caption">
+                <h3>Project Three</h3>
+                <p>Short description of the project.</p>
+                <a href="#">View project</a>
+              </div>
+              <img src="https://via.placeholder.com/600x400" alt="Project Three"/>
+            </div>
+          </div>
+        </div>
+        <button class="arrow right" data-carousel="projects" aria-label="Next slide">&#9654;</button>
+      </div>
+      <div class="dots" id="projects-dots"></div>
+    </div>
+  </section>
+
+  <section id="skills" class="panel">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skill-category">
+        <h3>Lenguajes</h3>
+        <div class="skill-list">
+          <span>C++ <i class="devicon-cplusplus-plain colored" aria-hidden="true"></i></span>
+          <span>C# <i class="devicon-csharp-plain colored" aria-hidden="true"></i></span>
+          <span>JavaScript <i class="devicon-javascript-plain colored" aria-hidden="true"></i></span>
+          <span>Python <i class="devicon-python-plain colored" aria-hidden="true"></i></span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Frameworks</h3>
+        <div class="skill-list">
+          <span>Django <i class="devicon-django-plain colored" aria-hidden="true"></i></span>
+          <span>Laravel <i class="devicon-laravel-plain colored" aria-hidden="true"></i></span>
+          <span>Express <i class="devicon-express-original colored" aria-hidden="true"></i></span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Herramientas</h3>
+        <div class="skill-list">
+          <span>Git <i class="devicon-git-plain colored" aria-hidden="true"></i></span>
+          <span>GitHub <i class="devicon-github-original colored" aria-hidden="true"></i></span>
+          <span>Docker <i class="devicon-docker-plain colored" aria-hidden="true"></i></span>
+          <span>VS Code <i class="devicon-vscode-plain colored" aria-hidden="true"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hobbies" class="panel">
+    <div class="container">
+      <h2>Hobbies</h2>
+      <div class="carousel-wrapper" tabindex="0">
+        <button class="arrow left" data-carousel="hobbies" aria-label="Previous slide">&#9664;</button>
+        <div class="carousel-view">
+          <div class="carousel" id="hobbies-carousel">
+            <div class="item hobby-card">
+              <img src="https://via.placeholder.com/300x200" alt="Cycling"/>
+              <h3>Cycling</h3>
+              <p>Cycling through mountains and nature trails.</p>
+            </div>
+            <div class="item hobby-card">
+              <img src="https://via.placeholder.com/300x200" alt="Photography"/>
+              <h3>Photography</h3>
+              <p>Photography of urban landscapes.</p>
+            </div>
+            <div class="item hobby-card">
+              <img src="https://via.placeholder.com/300x200" alt="Cooking"/>
+              <h3>Cooking</h3>
+              <p>Cooking experimental dishes.</p>
+            </div>
+          </div>
+        </div>
+        <button class="arrow right" data-carousel="hobbies" aria-label="Next slide">&#9654;</button>
+      </div>
+      <div class="dots" id="hobbies-dots"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="panel">
+    <div class="container">
+      <h2>Let&rsquo;s Connect</h2>
+      <p class="contact-intro">Elige la forma que prefieras para ponerte en contacto conmigo.</p>
+      <div class="contact-cards">
+        <a class="contact-card" href="mailto:you@example.com">
+          <span class="contact-icon" aria-hidden="true">✉️</span>
+          <div class="contact-content">
+            <h3>Email</h3>
+            <p>you@example.com</p>
+            <span class="contact-cta">Haz clic para escribir</span>
+          </div>
+        </a>
+        <a class="contact-card" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon" aria-hidden="true"><i class="devicon-github-original"></i></span>
+          <div class="contact-content">
+            <h3>GitHub</h3>
+            <p>@tu-usuario</p>
+            <span class="contact-cta">Explora mis repositorios</span>
+          </div>
+        </a>
+        <a class="contact-card" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon" aria-hidden="true"><i class="devicon-linkedin-plain"></i></span>
+          <div class="contact-content">
+            <h3>LinkedIn</h3>
+            <p>/in/tu-perfil</p>
+            <span class="contact-cta">Conectemos</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="cursor-ball"></div>
+  <div id="lava-trail"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
