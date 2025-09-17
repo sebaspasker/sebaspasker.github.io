@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
               'Research platform combining Django, Mapbox and MySQL to estimate fish biomass and classify species with marine biologists.',
             toolsLabel: 'Tools:',
             tools: 'Django · Mapbox GL JS · MySQL · GeoJSON · Data Science · Python',
-            link: 'View',
+            link: 'View code',
             alt: 'Preview of the Deepfish2 research platform'
           },
           {
