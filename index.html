@@ -11,14 +11,34 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
 </head>
 <body>
-  <nav class="nav-index">
-    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#hobbies">Hobbies</a></li>
-      <li><a href="#contact">Contact</a></li>
+  <button
+    id="language-toggle"
+    class="language-toggle"
+    type="button"
+    aria-label="Switch to Spanish"
+    title="Switch to Spanish"
+  >EN</button>
+
+  <nav
+    class="nav-index"
+    aria-label="Primary navigation"
+    data-i18n-aria-label="aria.primaryNav"
+  >
+    <button
+      id="menu-toggle"
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation"
+      title="Open navigation"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+    >☰</button>
+    <ul id="primary-nav" class="nav-links">
+      <li><a href="#home" data-i18n="nav.home">Home</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#hobbies" data-i18n="nav.hobbies">Hobbies</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -26,46 +46,233 @@
 
   <section id="home" class="panel">
     <div class="container">
-      <img src="https://via.placeholder.com/150" alt="Avatar" class="avatar"/>
+      <img
+        src="imgs/avatar.png"
+        data-light-src="imgs/avatar.png"
+        data-dark-src="imgs/avatar_bw.png"
+        alt="Avatar of Sebastian Pasker"
+        class="avatar"
+      />
       <h1 id="intro" class="title"></h1>
-      <button id="view-projects">Mis proyectos</button>
+      <p class="summary" data-i18n="home.summary">
+        I build reliable backends and automate Linux infrastructure for teams.
+      </p>
+      <button id="view-projects" data-i18n="buttons.viewProjects">Explore my work</button>
     </div>
   </section>
 
   <section id="projects" class="panel">
     <div class="container">
-      <h2>My Projects</h2>
+      <h2 data-i18n="projects.title">My projects</h2>
       <div class="carousel-wrapper" tabindex="0">
-        <button class="arrow left" data-carousel="projects" aria-label="Previous slide">&#9664;</button>
+        <button
+          class="arrow left"
+          data-carousel="projects"
+          aria-label="Previous slide"
+          data-i18n-aria-label="aria.previousSlide"
+        >&#9664;</button>
         <div class="carousel-view">
           <div class="carousel" id="projects-carousel">
             <div class="item">
               <div class="caption">
-                <h3>Project One</h3>
-                <p>Short description of the project.</p>
-                <a href="#">View project</a>
+                <h3 data-i18n="projects.items.0.title">Gloria2 (WebGIS for aquaculture)</h3>
+                <p data-i18n="projects.items.0.description">
+                  Real-time WebGIS to monitor fish farm escapes using geolocation and spatial data
+                  pipelines.
+                </p>
+                <p class="project-tools">
+                  <strong data-i18n="projects.items.0.toolsLabel">Tools:</strong>
+                  <span data-i18n="projects.items.0.tools">Mapbox GL JS · Node JS · GeoJSON · Data exploitation · Copernicus · Shell Scripting</span>
+                </p>
+                <a
+                  href="https://github.com/sebaspasker/webGIS-gloria"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="projects.items.0.link"
+                >View repository</a>
               </div>
-              <img src="https://via.placeholder.com/600x400" alt="Project One"/>
+              <div class="project-gallery" data-project-index="0">
+                <button
+                  type="button"
+                  class="gallery-btn prev"
+                  aria-label="Previous slide"
+                  data-i18n-aria-label="aria.previousSlide"
+                >&#10094;</button>
+                <button
+                  type="button"
+                  class="gallery-preview"
+                  aria-label="Expand project gallery"
+                  aria-haspopup="dialog"
+                  data-i18n-aria-label="aria.openGallery"
+                >
+                  <img
+                    class="project-image"
+                    src="https://via.placeholder.com/600x400?text=Gloria2+Dashboard"
+                    alt="Gloria2 WebGIS dashboard"
+                    data-i18n-alt="projects.items.0.alt"
+                    loading="lazy"
+                  />
+                </button>
+                <button
+                  type="button"
+                  class="gallery-btn next"
+                  aria-label="Next slide"
+                  data-i18n-aria-label="aria.nextSlide"
+                >&#10095;</button>
+              </div>
             </div>
             <div class="item">
               <div class="caption">
-                <h3>Project Two</h3>
-                <p>Short description of the project.</p>
-                <a href="#">View project</a>
+                <h3 data-i18n="projects.items.1.title">Deepfish2 (WebGIS &amp; biomass estimation)</h3>
+                <p data-i18n="projects.items.1.description">
+                  Research platform combining Django, Mapbox and data science to estimate fish biomass
+                  and classify species with marine biologists.
+                </p>
+                <p class="project-tools">
+                  <strong data-i18n="projects.items.1.toolsLabel">Tools:</strong>
+                  <span data-i18n="projects.items.1.tools">Django · Mapbox GL JS · MySQL · GEOJson · Python</span>
+                </p>
+                <a
+                  href="https://github.com/sebaspasker/webGIS-deepfish"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="projects.items.1.link"
+                >View code</a>
               </div>
-              <img src="https://via.placeholder.com/600x400" alt="Project Two"/>
+              <div class="project-gallery" data-project-index="1">
+                <button
+                  type="button"
+                  class="gallery-btn prev"
+                  aria-label="Previous slide"
+                  data-i18n-aria-label="aria.previousSlide"
+                >&#10094;</button>
+                <button
+                  type="button"
+                  class="gallery-preview"
+                  aria-label="Expand project gallery"
+                  aria-haspopup="dialog"
+                  data-i18n-aria-label="aria.openGallery"
+                >
+                  <img
+                    class="project-image"
+                    src="https://via.placeholder.com/600x400?text=Deepfish2+Overview"
+                    alt="Deepfish2 platform overview"
+                    data-i18n-alt="projects.items.1.alt"
+                    loading="lazy"
+                  />
+                </button>
+                <button
+                  type="button"
+                  class="gallery-btn next"
+                  aria-label="Next slide"
+                  data-i18n-aria-label="aria.nextSlide"
+                >&#10095;</button>
+              </div>
             </div>
             <div class="item">
               <div class="caption">
-                <h3>Project Three</h3>
-                <p>Short description of the project.</p>
-                <a href="#">View project</a>
+                <h3 data-i18n="projects.items.2.title">BJJ Guide Fabric</h3>
+                <p data-i18n="projects.items.2.description">
+                  CLI tool that transforms instructional videos into structured study guides with
+                  diagrams and automation.
+                </p>
+                <p class="project-tools">
+                  <strong data-i18n="projects.items.2.toolsLabel">Tools:</strong>
+                  <span data-i18n="projects.items.2.tools">Python · Fabric · FFmpeg · Markdown · Bash Scripting · GPT APIs · Prompts</span>
+                </p>
+                <a
+                  href="https://github.com/sebaspasker/bjj_instructional_scripting"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="projects.items.2.link"
+                >Read the docs</a>
               </div>
-              <img src="https://via.placeholder.com/600x400" alt="Project Three"/>
+              <div class="project-gallery" data-project-index="2">
+                <button
+                  type="button"
+                  class="gallery-btn prev"
+                  aria-label="Previous slide"
+                  data-i18n-aria-label="aria.previousSlide"
+                >&#10094;</button>
+                <button
+                  type="button"
+                  class="gallery-preview"
+                  aria-label="Expand project gallery"
+                  aria-haspopup="dialog"
+                  data-i18n-aria-label="aria.openGallery"
+                >
+                  <img
+                    class="project-image"
+                    src="https://via.placeholder.com/600x400?text=BJJ+Guide+CLI"
+                    alt="BJJ Guide Fabric CLI output"
+                    data-i18n-alt="projects.items.2.alt"
+                    loading="lazy"
+                  />
+                </button>
+                <button
+                  type="button"
+                  class="gallery-btn next"
+                  aria-label="Next slide"
+                  data-i18n-aria-label="aria.nextSlide"
+                >&#10095;</button>
+              </div>
+            </div>
+            <div class="item">
+              <div class="caption">
+                <h3 data-i18n="projects.items.3.title">ROL Game (proyecto_SD)</h3>
+                <p data-i18n="projects.items.3.description">
+                  Event-driven architecture experiment focused on modular services, security,
+                  and data integrity.
+                </p>
+                <p class="project-tools">
+                  <strong data-i18n="projects.items.3.toolsLabel">Tools:</strong>
+                  <span data-i18n="projects.items.3.tools">Kafka · Sockets · Docker · Json · Docker</span>
+                </p>
+                <a
+                  href="https://github.com/sebaspasker/proyecto_SD"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="projects.items.3.link"
+                >View code</a>
+              </div>
+              <div class="project-gallery" data-project-index="3">
+                <button
+                  type="button"
+                  class="gallery-btn prev"
+                  aria-label="Previous slide"
+                  data-i18n-aria-label="aria.previousSlide"
+                >&#10094;</button>
+                <button
+                  type="button"
+                  class="gallery-preview"
+                  aria-label="Expand project gallery"
+                  aria-haspopup="dialog"
+                  data-i18n-aria-label="aria.openGallery"
+                >
+                  <img
+                    class="project-image"
+                    src="https://via.placeholder.com/600x400?text=ROL+Game+Architecture"
+                    alt="ROL Game microservices diagram"
+                    data-i18n-alt="projects.items.3.alt"
+                    loading="lazy"
+                  />
+                </button>
+                <button
+                  type="button"
+                  class="gallery-btn next"
+                  aria-label="Next slide"
+                  data-i18n-aria-label="aria.nextSlide"
+                >&#10095;</button>
+              </div>
             </div>
           </div>
         </div>
-        <button class="arrow right" data-carousel="projects" aria-label="Next slide">&#9654;</button>
+        <button
+          class="arrow right"
+          data-carousel="projects"
+          aria-label="Next slide"
+          data-i18n-aria-label="aria.nextSlide"
+        >&#9654;</button>
       </div>
       <div class="dots" id="projects-dots"></div>
     </div>
@@ -73,31 +280,49 @@
 
   <section id="skills" class="panel">
     <div class="container">
-      <h2>Skills</h2>
+      <h2 data-i18n="skills.title">Core skills</h2>
       <div class="skill-category">
-        <h3>Lenguajes</h3>
+        <h3 data-i18n="skills.languages">Programming Languages</h3>
         <div class="skill-list">
-          <span>C++ <i class="devicon-cplusplus-plain colored" aria-hidden="true"></i></span>
-          <span>C# <i class="devicon-csharp-plain colored" aria-hidden="true"></i></span>
-          <span>JavaScript <i class="devicon-javascript-plain colored" aria-hidden="true"></i></span>
           <span>Python <i class="devicon-python-plain colored" aria-hidden="true"></i></span>
+          <span>JavaScript <i class="devicon-javascript-plain colored" aria-hidden="true"></i></span>
+          <span>Bash <i class="devicon-bash-plain colored" aria-hidden="true"></i></span>
+          <span>C++<i class="devicon-cplusplus-plain colored" aria-hidden="true"></i></span>
+          <span>C#<i class="devicon-csharp-plain colored" aria-hidden="strue"></i></span>
+          <br>
+          <span>Java<i class="devicon-java-plain colored" aria-hidden="strue"></i></span>
+          <span>PHP<i class="devicon-php-plain colored" aria-hidden="strue"></i></span>
+          <span>HTML5<i class="devicon-html5-plain colored" aria-hidden="strue"></i></span>
+          <span>CSS3<i class="devicon-css3-plain colored" aria-hidden="strue"></i></span>
         </div>
       </div>
       <div class="skill-category">
-        <h3>Frameworks</h3>
+        <h3 data-i18n="skills.frameworks">Frameworks &amp; Platforms</h3>
         <div class="skill-list">
           <span>Django <i class="devicon-django-plain colored" aria-hidden="true"></i></span>
-          <span>Laravel <i class="devicon-laravel-plain colored" aria-hidden="true"></i></span>
-          <span>Express <i class="devicon-express-original colored" aria-hidden="true"></i></span>
+          <span>Node.js <i class="devicon-nodejs-plain colored" aria-hidden="true"></i></span>
+          <span>Mapbox <i class="devicon-mapbox-original"></i></span>
+          <span>Angular js<i class="devicon-angularjs-plain colored"></i></span>
+          <span>Laravel <i class="devicon-laravel-original colored" aria-hidden="true"></i></span>
+          <span>.NET  <i class="devicon-dotnetcore-plain"></i></span>
+          <span>Spring <i class="devicon-spring-original colored"></i></span>
         </div>
       </div>
       <div class="skill-category">
-        <h3>Herramientas</h3>
+        <h3 data-i18n="skills.tools">Infrastructure &amp; Tools</h3>
         <div class="skill-list">
+          <span>Linux <i class="devicon-linux-plain colored" aria-hidden="true"></i></span>
+          <span>Docker <i class="devicon-docker-plain colored" aria-hidden="true"></i></span>
           <span>Git <i class="devicon-git-plain colored" aria-hidden="true"></i></span>
           <span>GitHub <i class="devicon-github-original colored" aria-hidden="true"></i></span>
-          <span>Docker <i class="devicon-docker-plain colored" aria-hidden="true"></i></span>
-          <span>VS Code <i class="devicon-vscode-plain colored" aria-hidden="true"></i></span>
+          <span>Windows <i class="devicon-windows11-original colored" aria-hidden="true"></i></span>
+          <span>MySQL <i class="devicon-mysql-plain colored" aria-hidden="true"></i></span>
+          <span>PostgreSQL <i class="devicon-postgresql-plain colored" aria-hidden="true"></i></span>
+          <span>Kafka <i class="devicon-apachekafka-plain colored" aria-hidden="true"></i></span> 
+          <span>Jenkins <i class="devicon-jenkins-line colored"></i></span>
+          <span>JIRA 
+            <i class="devicon-jira-plain colored"></i>
+          </span>
         </div>
       </div>
     </div>
@@ -105,29 +330,57 @@
 
   <section id="hobbies" class="panel">
     <div class="container">
-      <h2>Hobbies</h2>
+      <h2 data-i18n="hobbies.title">Hobbies</h2>
       <div class="carousel-wrapper" tabindex="0">
-        <button class="arrow left" data-carousel="hobbies" aria-label="Previous slide">&#9664;</button>
+        <button
+          class="arrow left"
+          data-carousel="hobbies"
+          aria-label="Previous slide"
+          data-i18n-aria-label="aria.previousSlide"
+        >&#9664;</button>
         <div class="carousel-view">
           <div class="carousel" id="hobbies-carousel">
             <div class="item hobby-card">
-              <img src="https://via.placeholder.com/300x200" alt="Cycling"/>
-              <h3>Cycling</h3>
-              <p>Cycling through mountains and nature trails.</p>
+              <img
+                src="imgs/dot_01.jpg"
+                alt="Linux terminal running shell scripts"
+                data-i18n-alt="hobbies.items.0.alt"
+              />
+              <h3 data-i18n="hobbies.items.0.title">Shell scripting &amp; Linux tweaks</h3>
+              <p data-i18n="hobbies.items.0.description">
+                Automating tasks and customizing my Linux setup to keep everything smooth.
+              </p>
             </div>
             <div class="item hobby-card">
-              <img src="https://via.placeholder.com/300x200" alt="Photography"/>
-              <h3>Photography</h3>
-              <p>Photography of urban landscapes.</p>
+              <img
+                src="imgs/bjj_02.jpeg"
+                alt="Brazilian Jiu-Jitsu training"
+                data-i18n-alt="hobbies.items.1.alt"
+              />
+              <h3 data-i18n="hobbies.items.1.title">Brazilian Jiu-Jitsu</h3>
+              <p data-i18n="hobbies.items.1.description">
+                Practicing grappling to sharpen focus, resilience, and quick problem solving.
+              </p>
             </div>
             <div class="item hobby-card">
-              <img src="https://via.placeholder.com/300x200" alt="Cooking"/>
-              <h3>Cooking</h3>
-              <p>Cooking experimental dishes.</p>
+              <img
+                src="imgs/senderismo.jpg"
+                alt="Hiking trail in the mountains"
+                data-i18n-alt="hobbies.items.2.alt"
+              />
+              <h3 data-i18n="hobbies.items.2.title">Hiking &amp; trail routes</h3>
+              <p data-i18n="hobbies.items.2.description">
+                Exploring routes and staying active outdoors whenever I can.
+              </p>
             </div>
           </div>
         </div>
-        <button class="arrow right" data-carousel="hobbies" aria-label="Next slide">&#9654;</button>
+        <button
+          class="arrow right"
+          data-carousel="hobbies"
+          aria-label="Next slide"
+          data-i18n-aria-label="aria.nextSlide"
+        >&#9654;</button>
       </div>
       <div class="dots" id="hobbies-dots"></div>
     </div>
@@ -135,36 +388,71 @@
 
   <section id="contact" class="panel">
     <div class="container">
-      <h2>Let&rsquo;s Connect</h2>
-      <p class="contact-intro">Elige la forma que prefieras para ponerte en contacto conmigo.</p>
+      <h2 data-i18n="contact.title">Let&rsquo;s Connect</h2>
+      <p class="contact-intro" data-i18n="contact.intro">Choose the way you&rsquo;d like to get in touch with me.</p>
       <div class="contact-cards">
-        <a class="contact-card" href="mailto:you@example.com">
+        <a class="contact-card" href="mailto:sebaspasker@gmail.com">
           <span class="contact-icon" aria-hidden="true">✉️</span>
           <div class="contact-content">
-            <h3>Email</h3>
-            <p>you@example.com</p>
-            <span class="contact-cta">Haz clic para escribir</span>
+            <h3 data-i18n="contact.email.heading">Email</h3>
+            <p data-i18n="contact.email.value">sebaspasker@gmail.com</p>
+            <span class="contact-cta" data-i18n="contact.email.cta">Start an email</span>
           </div>
         </a>
-        <a class="contact-card" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+        <a
+          class="contact-card"
+          href="https://github.com/sebaspasker"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span class="contact-icon" aria-hidden="true"><i class="devicon-github-original"></i></span>
           <div class="contact-content">
-            <h3>GitHub</h3>
-            <p>@tu-usuario</p>
-            <span class="contact-cta">Explora mis repositorios</span>
+            <h3 data-i18n="contact.github.heading">GitHub</h3>
+            <p data-i18n="contact.github.value">@sebaspasker</p>
+            <span class="contact-cta" data-i18n="contact.github.cta">Browse my repositories</span>
           </div>
         </a>
-        <a class="contact-card" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+        <a
+          class="contact-card"
+          href="https://www.linkedin.com/in/sebaspasker/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <span class="contact-icon" aria-hidden="true"><i class="devicon-linkedin-plain"></i></span>
           <div class="contact-content">
-            <h3>LinkedIn</h3>
-            <p>/in/tu-perfil</p>
-            <span class="contact-cta">Conectemos</span>
+            <h3 data-i18n="contact.linkedin.heading">LinkedIn</h3>
+            <p data-i18n="contact.linkedin.value">/in/sebaspasker/</p>
+            <span class="contact-cta" data-i18n="contact.linkedin.cta">Let&rsquo;s connect</span>
           </div>
         </a>
       </div>
     </div>
   </section>
+
+  <div id="project-lightbox" class="project-lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" data-close="true"></div>
+    <div class="lightbox-dialog" role="dialog" aria-modal="true">
+      <button
+        type="button"
+        class="lightbox-close"
+        aria-label="Close gallery"
+        data-i18n-aria-label="aria.closeGallery"
+      >&#10005;</button>
+      <button
+        type="button"
+        class="lightbox-arrow left"
+        aria-label="Previous slide"
+        data-i18n-aria-label="aria.previousSlide"
+      >&#10094;</button>
+      <img class="lightbox-image" alt="" loading="lazy" />
+      <button
+        type="button"
+        class="lightbox-arrow right"
+        aria-label="Next slide"
+        data-i18n-aria-label="aria.nextSlide"
+      >&#10095;</button>
+    </div>
+  </div>
 
   <div id="cursor-ball"></div>
   <div id="lava-trail"></div>
